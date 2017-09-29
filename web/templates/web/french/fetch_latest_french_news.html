@@ -1,0 +1,19 @@
+{% load thumbnail %}
+
+<div class="slider">
+  <div class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      {% for news_group in news_group_list %}
+        {% for news in news_group %}
+          <div class="carousel-item active">
+            <img class="d-block img-fluid thumb" src="{% thumbnail news.photo 640x350 crop %}" alt="First slide">
+          </div>
+          <div class="carousel-caption breaking-news-title">
+          <h2>{{ news.titre }}</h2>
+          </div>
+          {% endfor %}
+        {% endfor %}
+    </div>
+  </div>
+  <h5 class="breaking">Breaking news</h5>
+</div>

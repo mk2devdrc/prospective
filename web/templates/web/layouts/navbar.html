@@ -1,0 +1,48 @@
+{% load static %}
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">
+      <a href="index.html">
+        <h1><span>PROSPECTIVE</span></h1>
+      </a>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="header-right">
+    <div class="top-menu">
+      <ul>
+        <li><a href="index.html">Francais</a></li> |
+        <li><a href="about.html">Kikongo</a></li> |
+        <li><a href="contact.html">Lingala</a></li> |
+        <li><a href="contact.html">Tshiluba</a></li> |
+        <li><a href="contact.html">Swahili</a></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<span class="menu"></span>
+<div class="menu-strip">
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="sports.html">Politque</a></li>
+    <li><a href="tech.html">Economie</a></li>
+    <li><a href="business.html">Internationale</a></li>
+    <li><a href="movies.html">Sports</a></li>
+    <li><a href="movies.html">Technologie</a></li>
+    <li><a href="books.html">Sante</a></li>
+    <li><a href="movies.html">culture</a></li>
+  </ul>
+</div>
+<!-- script for menu -->
+<script>
+  $("span.menu").click(function() {
+    $(".menu-strip").slideToggle("slow", function() {
+      // Animation complete.
+    });
+  });
+</script>
+<!-- script for menu -->
+<div class="clearfix"></div>
