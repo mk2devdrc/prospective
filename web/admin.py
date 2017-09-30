@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Categorie, Francais
+from .models import Categorie, Francais, Lingala
 
 @admin.register(Categorie)
 class CategoryAdmin(admin.ModelAdmin):
@@ -15,7 +15,17 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Francais)
 class FrancaisAdmin(admin.ModelAdmin):
-    list_display = ('toUperWorld', 'titre', 'categorie', 'editeur', 'source', 'date_creation')
+    list_display = ('toUperWorld', 'categorie', 'editeur', 'source', 'date_creation')
+    ordering = ('titre',)
+
+    def toUperWorld(self, obj):
+        return ("%s"%(obj.titre)).capitalize()
+    toUperWorld.short_description = 'Titre'
+
+
+@admin.register(Lingala)
+class LingalaAdmin(admin.ModelAdmin):
+    list_display = ('toUperWorld', 'categorie', 'editeur', 'source', 'date_creation')
     ordering = ('titre',)
 
     def toUperWorld(self, obj):

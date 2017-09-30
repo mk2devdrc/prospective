@@ -31,3 +31,23 @@ class Francais(models.Model):
 
     def __str__(self):
         return self.titre
+
+
+class Lingala(models.Model):
+    """docstring for Kikongo"""
+    categorie = models.ForeignKey(Categorie, related_name='categories')
+    titre = models.CharField(default='Tire', max_length=90)
+    contenu = models.TextField(default='Contenu')
+    photo = models.ImageField(upload_to='article_photo/')
+    editeur = models.CharField(max_length=50, default='Editeur')
+    source = models.CharField(max_length=59, default='Source de la nouvelle')
+    date_creation = models.DateField(default=timezone.now)
+    date_publication = models.DateField(default=timezone.now)
+    date_modification = models.DateField(default=timezone.now)
+
+    class meta:
+        verbose_name = 'Lingala'
+        verbose_name_plural = 'Lingala'
+
+    def __str__(self):
+        return self.titre

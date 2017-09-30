@@ -1,0 +1,103 @@
+{% extends "web/layouts_2/base.html" %}
+{% load prospective_tags %}
+{% block title %}Basango{% endblock %}
+{% block body %}
+<div class="main-content">
+  <div class="col-md-9 total-news">
+    {% fetch_latest_french_news %}
+    <div class="posts">
+      <div class="left-posts">
+        <div class="world-news">
+          <div class="main-title-head">
+            <h3>Basango mia politiki</h3>
+            <a href="#">Mingi +</a>
+            <div class="clearfix"></div>
+          </div>
+          <div class="world-news-grids">
+              {% fetch_lingala_news %}
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="latest-articles">
+          <div class="main-title-head">
+            <h3>Ekonzo</h3>
+            <a href="#">Mingi  +</a>
+            <div class="clearfix"></div>
+          </div>
+          <div class="world-news-grids">
+            {% fetch_lingala_economie_news %}
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="main-title-head">
+            <h3>masano</h3>
+            <a href="#">Mingi  +</a>
+            <div class="clearfix"></div>
+          </div>
+          <div class="world-news-grids">
+              {% fetch_lingala_sports_news %}
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="tech-news">
+          <div class="main-title-head">
+            <h3>technologie</h3>
+            <a href="{% url 'home' %}">Mingi  +</a>
+            <div class="clearfix"></div>
+          </div>
+          <div class="tech-news-grids">
+            <div class="left-tech-news">
+              <div class="tech-news-grid span_66">
+                <a href="#">Lorem ipsum dolor sit amet conse ctetur adipiscing elit  </a>
+                <p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor ... </p>
+                <p>by<a href="#">John Doe </a> | 29 comments</p>
+              </div>
+              <div class="tech-news-grid">
+                <a href="">Lorem ipsum dolor sit amet conse ctetur adipiscing elit  </a>
+                <p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor ... </p>
+                <p>by<a href="#">John Doe </a> | 29 comments</p>
+              </div>
+            </div>
+            <div class="right-tech-news">
+              <div class="tech-news-grid span_66">
+                <a href="">Lorem ipsum dolor sit amet conse ctetur adipiscing elit  </a>
+                <p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor ... </p>
+                <p>by<a href="#">John Doe </a> | 29 comments</p>
+              </div>
+              <div class="tech-news-grid">
+                <a href="">Lorem ipsum dolor sit amet conse ctetur adipiscing elit  </a>
+                <p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor ... </p>
+                <p>by<a href="#">John Doe </a> | 29 comments</p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <div class="right-posts">
+        <div class="desk-grid">
+          <h3>Mokili</h3>
+          <div class="desk">
+            <a href="" class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit </a>
+            <p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
+            <p><a href="#">kota mozindo</a><span>3 hours ago</span></p>
+          </div>
+          <a class="more" href="#">Mingi  +</a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div> <!-- End of col-md-9-->
+  <div class="col-md-3 side-bar">
+    <div class="videos">
+      {% fetch_all_french_news %}
+      <a class="more1" href="#">Mingi  +</a>
+      <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+{% endblock body %}

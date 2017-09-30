@@ -1,0 +1,95 @@
+{% extends "web/layouts_2/base.html" %}
+{% load thumbnail %}
+
+{% block body %}
+<div class="clearfix"></div>
+<div class="movie-main-content">
+  <div class="col-md-9 total-news">
+
+    <div class="grids">
+      <div class="msingle-grid box">
+        <div class="grid-header">
+          <h3>{{ object.titre }}</h3>
+          <ul>
+            <li><span>Ekomami na {{ object.editeur }} - {{ object.date_creation }}</span></li>
+            <li><a href="#">5 comments</a></li>
+          </ul>
+        </div>
+        <div class="singlepage">
+          <a href="#"><img class="img-responsive" src="{% thumbnail object.photo 700x400 crop %}" /></a>
+          <p>{{ object.contenu | linebreaks|escape  }}</p>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+
+      <div class="clearfix"> </div>
+    </div>
+
+    <ul class="comment-list">
+      <h5 class="post-author_head">Ekomami na <a href="#" rel="author">{{ object.editeur}}</a></h5>
+        <div class="desc">
+          <p>Source: <a href="#"rel="author">{{ object.source }}</a></p>
+        </div>
+        <div class="clearfix"></div>
+      </li>
+    </ul>
+    <div class="content-form">
+      <h3>Kabola likanisi</h3>
+      <form>
+        <input type="text" placeholder="Kombo" required/>
+        <input type="text" placeholder="Email" required/>
+        <input type="text" placeholder="Telephone" required/>
+        <textarea placeholder="Likanisi"></textarea>
+        <input type="submit" value="Tinda" />
+      </form>
+    </div>
+  </div>
+  <div class="col-md-3 side-bar">
+    <div class="might">
+      <h4>Ba Sango</h4>
+      <div class="might-grid">
+        <div class="grid-might">
+          <a href="single.html"><img src="images/mi.jpg" class="img-responsive" alt=""> </a>
+        </div>
+        <div class="might-top">
+          <p>Lorem Ipsum is simply typesetting industry.</p>
+          <a href="single.html">Lorem Ipsum <i> </i></a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="might-grid">
+        <div class="grid-might">
+          <a href="single.html"><img src="images/mi1.jpg" class="img-responsive" alt=""> </a>
+        </div>
+        <div class="might-top">
+          <p>Lorem Ipsum is simply typesetting industry.</p>
+          <a href="single.html">Lorem Ipsum <i> </i></a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="might-grid">
+        <div class="grid-might">
+          <a href="single.html"><img src="images/mi2.jpg" class="img-responsive" alt=""> </a>
+        </div>
+        <div class="might-top">
+          <p>Lorem Ipsum is simply typesetting industry.</p>
+          <a href="single.html">Lorem Ipsum <i> </i></a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="might-grid">
+        <div class="grid-might">
+          <a href="single.html"><img src="images/mi3.jpg" class="img-responsive" alt=""> </a>
+        </div>
+        <div class="might-top">
+          <p>Lorem Ipsum is simply typesetting industry.</p>
+          <a href="single.html">Lorem Ipsum <i> </i></a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+{% endblock body %}

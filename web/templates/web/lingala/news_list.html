@@ -1,0 +1,14 @@
+{% load thumbnail %}
+
+{% for news_group in news_group_list %}
+  {% for news in news_group %}
+  <div class="world-news-grid">
+    <img class="thumb" src="{% thumbnail news.photo 100x70 crop %}" alt="" />
+    <a href="{% url 'lingala-news-detail' news.pk %}" class="title">{{ news.titre | truncatewords_html:8 | safe | escape }} </a>
+    <p>{{ news.contenu | truncatewords_html:25 | safe | escape }}</p>
+    <a href="{% url 'lingala-news-detail' news.pk %}">Lire plus</a>
+  </div>
+  <!--//news-item-->
+  {% endfor %}
+<!--//item-->
+{% endfor %}
